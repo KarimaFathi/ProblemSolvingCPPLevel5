@@ -146,6 +146,15 @@ public:
         return _size == 0;
     }
 
-
+    void clear() {
+        //method 1
+       /* while (head != nullptr) {
+            deleteNode(head);
+        }*/
+        //method 2
+        while (_size > 0) {
+            deleteFirstNode();
+        }
+    }
 };
 
