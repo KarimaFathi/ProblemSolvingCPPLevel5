@@ -5,6 +5,9 @@ using namespace std;
 template <class T>
 class clsDblLinkedList 
 {
+private:
+    int _size = 0;
+
 public:
     class node {
     public:
@@ -22,6 +25,7 @@ public:
             head->prev = newNode;
         }
         head = newNode;
+        _size++;
     }
 
     void printList() {
@@ -55,6 +59,7 @@ public:
         }
 
         prevNode->next = newNode;
+        _size++;
     }
 
 
@@ -74,6 +79,7 @@ public:
             newNode->prev = current;
             current->next = newNode;
         }
+        _size++;
     }
 
     void deleteNode(node* nodeToDel) {
@@ -95,7 +101,7 @@ public:
             nodeToDel->prev->next = nodeToDel->next;
         }
         delete nodeToDel;
-
+        _size--;
     }
 
 
@@ -110,7 +116,7 @@ public:
             head->prev = NULL;
         }
         delete temp;
-
+        _size--;
     }
 
 
@@ -129,8 +135,12 @@ public:
         }
         temp->prev->next = NULL;
         delete temp;
+        _size--;
     }
 
+    int sizeOfList() {
+        return _size;
+    }
 
 
 };
