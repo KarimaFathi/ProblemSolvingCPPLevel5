@@ -9,6 +9,12 @@ int main()
 {
 
     clsDblLinkedList <int> myDblLinkedList;
+
+    if (myDblLinkedList.isEmpty() == true)
+        cout << "\nThe list is empty.\n";
+    else
+        cout << "\nThe list is not empty\n";
+
     myDblLinkedList.insertAtBeginning(5);
     myDblLinkedList.insertAtBeginning(4);
     myDblLinkedList.insertAtBeginning(3);
@@ -18,7 +24,10 @@ int main()
     cout << "\nLinked list content : ";
     myDblLinkedList.printList();
 
-    cout << "\nThe size of the link is : " << myDblLinkedList.sizeOfList();
+    if (myDblLinkedList.isEmpty() == true)
+        cout << "\nThe list is empty.\n";
+    else
+        cout << "\nThe list is not empty\n";
 
 
 
