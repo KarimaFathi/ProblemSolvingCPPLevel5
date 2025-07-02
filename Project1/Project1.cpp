@@ -16,13 +16,9 @@ int main()
     myDblLinkedList.insertAtBeginning(2);
     myDblLinkedList.insertAtBeginning(1);
 
-    cout << "\nLinked list size : " <<  myDblLinkedList.sizeOfList();
-
-    cout << "\nAfter clearing the linked list : \n";
-    
-    myDblLinkedList.clear();
-
-    cout << "\nLinked list size : " << myDblLinkedList.sizeOfList();
-
+    myDblLinkedList.printList();
+    cout << "\nAfter reversing : \n";
+    myDblLinkedList.reverse();
+    myDblLinkedList.printList();
 }
 

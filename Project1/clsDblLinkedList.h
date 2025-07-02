@@ -147,13 +147,37 @@ public:
     }
 
     void clear() {
-        //method 1
-       /* while (head != nullptr) {
-            deleteNode(head);
-        }*/
-        //method 2
         while (_size > 0) {
             deleteFirstNode();
+        }
+    }
+
+    void reverse() {
+        //method 1
+       /* clsDblLinkedList <T> reversedList;
+        node* temp = head;
+        while (temp != NULL) {
+            reversedList.insertAtBeginning(temp->value);
+            temp = temp->next;
+        }
+        clear();
+        head = reversedList.head;
+        reversedList.head = nullptr;
+        reversedList._size = 0;*/
+
+
+        //method 2
+        node* temp = nullptr;
+        node* current = head;
+        while (current != nullptr) {
+            temp = current->prev;
+            current->prev = current->next;
+            current->next = temp;
+            current = current->prev;
+        }
+
+        if (temp != nullptr) {
+            head = temp->prev;
         }
     }
 };
