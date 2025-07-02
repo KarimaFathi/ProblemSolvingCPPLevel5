@@ -207,5 +207,18 @@ public:
         else 
         return N->value;
     }
+
+    bool updateItem(int index, T val) {
+
+        node* N = getNode(index);
+        if (N == NULL)
+            return false;
+        else {
+            N->value = val;
+            return true;
+        }
+
+    }
+
 };
 

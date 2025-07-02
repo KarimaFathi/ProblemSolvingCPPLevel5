@@ -17,8 +17,9 @@ int main()
     myDblLinkedList.insertAtBeginning(1);
 
     myDblLinkedList.printList();
-
-    cout << "\nThe value of the node 2 is :" << myDblLinkedList.getItem(10);
+    myDblLinkedList.updateItem(2, 500);
+    cout << "\nAfter updating item at index 2 :\n";
+    myDblLinkedList.printList();
 
 
 }
