@@ -198,5 +198,14 @@ public:
         }
         return nullptr;
     }
+
+    T getItem(int index) {
+  
+        node* N = getNode(index);
+        if (N == NULL) 
+            return NULL;
+        else 
+        return N->value;
+    }
 };
 
