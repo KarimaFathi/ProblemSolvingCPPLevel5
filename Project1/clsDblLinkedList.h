@@ -217,7 +217,17 @@ public:
             N->value = val;
             return true;
         }
+    }
 
+    bool insertAfter(int index, T val) {
+        node* N = getNode(index);
+        if (N == NULL) {
+            return false;
+        }
+        else {
+            insertAfter(N, val);
+            return true;
+        }
     }
 
 };
