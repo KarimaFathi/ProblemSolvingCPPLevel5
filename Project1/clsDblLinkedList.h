@@ -180,5 +180,23 @@ public:
             head = temp->prev;
         }
     }
+
+    node* getNode(int index) {
+        int counter = 0;
+        node* current = head;
+
+        if (index > _size - 1 || index < 0) {
+            return nullptr;
+        }
+
+        while (current != NULL) {
+            if (counter == index) {
+                return current;
+            }
+             current = current->next;
+             counter++;
+        }
+        return nullptr;
+    }
 };
 

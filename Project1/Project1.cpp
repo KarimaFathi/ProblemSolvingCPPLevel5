@@ -17,8 +17,7 @@ int main()
     myDblLinkedList.insertAtBeginning(1);
 
     myDblLinkedList.printList();
-    cout << "\nAfter reversing : \n";
-    myDblLinkedList.reverse();
-    myDblLinkedList.printList();
+    clsDblLinkedList<int>::node* N = myDblLinkedList.getNode(0);
+    cout << "\nThe value of the node is :" << N->value;
 }
 
