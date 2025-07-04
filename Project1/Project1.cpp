@@ -1,5 +1,5 @@
 #include <iostream>
-#include "clsMyQueue.h"
+#include "clsMyStack.h"
 using namespace std;
 
 
@@ -7,48 +7,62 @@ using namespace std;
 
 int main()
 {
-	clsMyQueue<int> myQueue;
-	myQueue.push(10);
-	myQueue.push(20);
-	myQueue.push(30);
-	myQueue.push(40);
+    clsMyStack <int> MyStack;
 
-	myQueue.print();
-  
-	cout << "Queue's size : " << myQueue.size() << endl;
-
-	myQueue.pop();
-	myQueue.print();
-
-	cout << "Queue's front : " << myQueue.front() << endl;
-	cout << "Queue's back  : " << myQueue.back() << endl;
-
-	cout << "Item in pos 2 : " << myQueue.getItem(2);
-
-	myQueue.reverse();
-	cout << "\nQueue after reverse : ";
-	myQueue.print();
-
-	myQueue.insertAfter(2, 800);
-	cout << "\nQueue after inserting 800 after item at index 2 : ";
-	myQueue.print();
+    MyStack.push(10);
+    MyStack.push(20);
+    MyStack.push(30);
+    MyStack.push(40);
+    MyStack.push(50);
 
 
-	myQueue.updateItem(1, 200);
-	cout << "\nupdate item at index 2 : ";
-	myQueue.print();
+    cout << "\nStack: \n";
+    MyStack.print();
 
-	myQueue.insertAtFront(500);
-	cout << "\nQueue after inserting 500 at front : ";
-	myQueue.print();
+    cout << "\nStack Size: " << MyStack.size();
+    cout << "\nStack Top: " << MyStack.Top();
+    cout << "\nStack Bottom: " << MyStack.Bottom();
 
-	myQueue.insertAtBack(900);
-	cout << "\nQueue after inserting 900 at back : ";
-	myQueue.print();
+    MyStack.pop();
+
+    cout << "\n\nStack after pop() : \n";
+    MyStack.print();
+
+    //Extension #1
+    cout << "\n\n Item(2) : " << MyStack.getItem(2);
+
+    //Extension #2
+    MyStack.reverse();
+    cout << "\n\nStack after reverse() : \n";
+    MyStack.print();
+
+    //Extension #3
+    MyStack.updateItem(2, 600);
+    cout << "\n\nStack after updating Item(2) to 600 : \n";
+    MyStack.print();
+
+    //Extension #4
+    MyStack.insertAfter(2, 800);
+    cout << "\n\nStack after Inserting 800 after Item(2) : \n";
+    MyStack.print();
 
 
-	myQueue.clear();
-	cout << "\nQueue after clear : ";
-	myQueue.print();
+    //Extension #5
+    MyStack.insertAtFront(1000);
+    cout << "\n\nStack after Inserting 1000 at top: \n";
+    MyStack.print();
+
+    //Extension #6
+    MyStack.insertAtBack(2000);
+    cout << "\n\nStack after Inserting 2000 at bottom: \n";
+    MyStack.print();
+
+    //Extension #7
+    MyStack.clear();
+    cout << "\n\nStack after Clear(): \n";
+    MyStack.print();
+
+    system("pause>0");
+
 }
 
