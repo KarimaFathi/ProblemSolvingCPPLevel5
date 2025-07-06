@@ -22,6 +22,15 @@ int main()
     cout << "\nArray items : ";
     myDynamicArray.printList();
 
+    myDynamicArray.resize(2);
+
+    cout << "\nArray items after resizing to 2: ";
+    myDynamicArray.printList();
+
+    myDynamicArray.resize(10);
+
+    cout << "\nArray items after resizing to 10: ";
+    myDynamicArray.printList();
 
 
     system("pause>0");

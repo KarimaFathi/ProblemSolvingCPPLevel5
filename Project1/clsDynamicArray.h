@@ -44,5 +44,24 @@ public:
 	int size() {
 		return _size;
 	}
+
+	bool resize(int newSize) {
+		if (newSize < 0 || newSize == _size)
+			return false;
+
+		T* _newPtr = new T[newSize];
+
+		int copyLength = (newSize < _size) ? newSize : _size;
+		for (int i = 0 ; i < copyLength; i++) {
+			_newPtr[i] = _ptr[i];
+		}
+
+		delete[] _ptr;
+		_size = newSize;
+		_ptr = _newPtr;
+	
+		
+		return true;
+	}
 };
 
