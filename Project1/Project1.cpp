@@ -22,14 +22,18 @@ int main()
     cout << "\nArray items : ";
     myDynamicArray.printList();
 
-    myDynamicArray.resize(2);
 
-    cout << "\nArray items after resizing to 2: ";
+    cout << "\nItem at index 1 : " << myDynamicArray.getItem(1);
+    
+
+    myDynamicArray.reverse();
+
+    cout << "\nArray items after reversing: ";
     myDynamicArray.printList();
 
-    myDynamicArray.resize(10);
+    myDynamicArray.clear();
 
-    cout << "\nArray items after resizing to 10: ";
+    cout << "\nArray after clearing it : ";
     myDynamicArray.printList();
 
 

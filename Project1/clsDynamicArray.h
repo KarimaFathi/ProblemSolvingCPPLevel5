@@ -63,5 +63,26 @@ public:
 		
 		return true;
 	}
+
+	T getItem(int index) {
+		return _ptr[index];
+	}
+
+	void reverse() {
+		T* _newPtr = new T[_size];
+		for (int i = 0; i < _size; i++) {
+			_newPtr[i] = _ptr[_size - 1 - i];
+		}
+
+		delete[] _ptr;
+		_ptr = _newPtr;
+
+	}
+
+	void clear() {
+		delete[] _ptr;
+		_ptr = new T[0];
+		_size = 0;
+	}
 };
 
