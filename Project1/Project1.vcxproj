@@ -130,14 +130,18 @@
     <ClCompile Include="clsDblLinkedList.cpp" />
     <ClCompile Include="clsDynamicArray.cpp" />
     <ClCompile Include="clsMyQueue.cpp" />
+    <ClCompile Include="clsMyQueueArr.cpp" />
     <ClCompile Include="clsMyStack.cpp" />
+    <ClCompile Include="clsMyStackArr.cpp" />
     <ClCompile Include="Project1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="clsDblLinkedList.h" />
     <ClInclude Include="clsDynamicArray.h" />
     <ClInclude Include="clsMyQueue.h" />
+    <ClInclude Include="clsMyQueueArr.h" />
     <ClInclude Include="clsMyStack.h" />
+    <ClInclude Include="clsMyStackArr.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

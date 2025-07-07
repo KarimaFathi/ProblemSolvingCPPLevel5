@@ -68,18 +68,6 @@ public:
 		return _ptr[index];
 	}
 
-	bool setItem(int index, T Value)
-	{
-
-		if (index >= _size)
-		{
-			return false;
-		}
-
-		_ptr[index] = Value;
-		return true;
-
-	}
 
 	void reverse() {
 		T* _newPtr = new T[_size];

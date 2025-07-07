@@ -1,5 +1,5 @@
 #include <iostream>
-#include "clsDynamicArray.h"
+#include "clsMyStackArr.h"
 using namespace std;
 
 
@@ -7,34 +7,61 @@ using namespace std;
 
 int main()
 {
- 
-    clsDynamicArray<int> myDynamicArray(5);
+	clsMyStackArr <int> MyStack;
 
-    myDynamicArray.setItem(0, 10);
-    myDynamicArray.setItem(1, 20);
-    myDynamicArray.setItem(2, 30);
-    myDynamicArray.setItem(3, 40);
-    myDynamicArray.setItem(4, 50);
+    MyStack.push(10);
+    MyStack.push(20);
+    MyStack.push(30);
+    MyStack.push(40);
+    MyStack.push(50);
 
-    cout << "\nIs Empty ?: " << myDynamicArray.isEmpty();
-    cout << "\nArray size : " << myDynamicArray.size();
 
-    cout << "\nArray items : ";
-    myDynamicArray.printList();
+    cout << "\nStack: \n";
+    MyStack.print();
 
-    cout << endl << endl;
-    myDynamicArray.insertAtBeginning(200);
-    myDynamicArray.printList(); cout << endl;
+    cout << "\nStack Size: " << MyStack.size();
+    cout << "\nStack Top: " << MyStack.Top();
+    cout << "\nStack Bottom: " << MyStack.Bottom();
 
-    myDynamicArray.insertBefore(2, 400);
-    myDynamicArray.printList(); cout << endl;
+    MyStack.pop();
 
-    myDynamicArray.insertAfter(1, 300);
-    myDynamicArray.printList(); cout << endl;
+    cout << "\n\nStack after pop() : \n";
+    MyStack.print();
 
-    myDynamicArray.insertAtEnd(500);
-    myDynamicArray.printList(); cout << endl;
-    system("pause>0");
+
+    cout << "\n\n Item(2) : " << MyStack.getItem(2);
+
+
+    MyStack.reverse();
+    cout << "\n\nStack after reverse() : \n";
+    MyStack.print();
+
+
+    MyStack.updateItem(2, 600);
+    cout << "\n\nStack after updating Item(2) to 600 : \n";
+    MyStack.print();
+
+
+    MyStack.insertAfter(2, 800);
+    cout << "\n\nStack after Inserting 800 after Item(2) : \n";
+    MyStack.print();
+
+
+
+    MyStack.insertAtFront(1000);
+    cout << "\n\nStack after Inserting 1000 at top: \n";
+    MyStack.print();
+
+
+    MyStack.insertAtBack(2000);
+    cout << "\n\nStack after Inserting 2000 at bottom: \n";
+    MyStack.print();
+
+
+    MyStack.clear();
+    cout << "\n\nStack after Clear(): \n";
+    MyStack.print();
+   
 
 }
 
