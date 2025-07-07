@@ -107,5 +107,15 @@ public:
 		_ptr = _newPtr;
 		_size--;
 	}
+
+	void deleteFirstItem() {
+		deleteItemAt(0);
+	}
+
+	void deleteLastItem() {
+		deleteItemAt(_size - 1);
+	}
+
+
 };
 

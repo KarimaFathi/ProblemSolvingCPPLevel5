@@ -24,9 +24,18 @@ int main()
 
 
 
-    myDynamicArray.deleteItemAt(3);
-    cout << "\nArray after deleting item at index 3 : ";
+    myDynamicArray.deleteFirstItem();
+    cout << "\nArray after deleting first item : ";
     myDynamicArray.printList();
+
+    cout << "\nArray's size : " << myDynamicArray.size();
+
+
+    myDynamicArray.deleteLastItem();
+    cout << "\nArray after deleting last item : ";
+    myDynamicArray.printList();
+
+    cout << "\nArray's size : " << myDynamicArray.size();
 
     system("pause>0");
 
