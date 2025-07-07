@@ -1,5 +1,5 @@
 #include <iostream>
-#include "clsMyStackArr.h"
+#include "clsMyString.h"
 using namespace std;
 
 
@@ -7,60 +7,52 @@ using namespace std;
 
 int main()
 {
-	clsMyStackArr <int> MyStack;
+    cout << "\n\n\t\t\t\t\t\t Undo/Redo Project\n\n";
 
-    MyStack.push(10);
-    MyStack.push(20);
-    MyStack.push(30);
-    MyStack.push(40);
-    MyStack.push(50);
+    clsMyString S1;
 
+    cout << "\nS1  = " << S1.Value << "\n";
 
-    cout << "\nStack: \n";
-    MyStack.print();
+    S1.Value = "Mohammed";
 
-    cout << "\nStack Size: " << MyStack.size();
-    cout << "\nStack Top: " << MyStack.Top();
-    cout << "\nStack Bottom: " << MyStack.Bottom();
+    cout << "S1  = " << S1.Value << "\n";
 
-    MyStack.pop();
+    S1.Value = "Mohammed2";
 
-    cout << "\n\nStack after pop() : \n";
-    MyStack.print();
+    cout << "S1  = " << S1.Value << "\n";
 
+    S1.Value = "Mohammed3";
 
-    cout << "\n\n Item(2) : " << MyStack.getItem(2);
+    cout << "S1  = " << S1.Value << "\n";
 
+    cout << "\n\nUndo: ";
+    cout << "\n__________\n";
 
-    MyStack.reverse();
-    cout << "\n\nStack after reverse() : \n";
-    MyStack.print();
+    S1.undo();
+    cout << "\nS1  after undo = " << S1.Value << "\n";
 
+    S1.undo();
+    cout << "S1  after undo = " << S1.Value << "\n";
 
-    MyStack.updateItem(2, 600);
-    cout << "\n\nStack after updating Item(2) to 600 : \n";
-    MyStack.print();
+    S1.undo();
+    cout << "S1  after undo = " << S1.Value << "\n";
 
 
-    MyStack.insertAfter(2, 800);
-    cout << "\n\nStack after Inserting 800 after Item(2) : \n";
-    MyStack.print();
+    cout << "\n\nRedo: ";
+    cout << "\n__________\n";
 
+    S1.redo();
+    cout << "\nS1  after Redo = " << S1.Value << "\n";
 
+    S1.redo();
+    cout << "S1  after Redo = " << S1.Value << "\n";
 
-    MyStack.insertAtFront(1000);
-    cout << "\n\nStack after Inserting 1000 at top: \n";
-    MyStack.print();
+    S1.redo();
+    cout << "S1  after Redo = " << S1.Value << "\n";
 
+    system("pause>0");
 
-    MyStack.insertAtBack(2000);
-    cout << "\n\nStack after Inserting 2000 at bottom: \n";
-    MyStack.print();
-
-
-    MyStack.clear();
-    cout << "\n\nStack after Clear(): \n";
-    MyStack.print();
+    return 0;
    
 
 }

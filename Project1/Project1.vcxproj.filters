@@ -36,6 +36,9 @@
     <ClCompile Include="clsMyStackArr.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="clsMyString.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="clsDblLinkedList.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="clsMyStackArr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="clsMyString.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
