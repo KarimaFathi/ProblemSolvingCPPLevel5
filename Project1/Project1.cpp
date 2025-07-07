@@ -23,19 +23,10 @@ int main()
     myDynamicArray.printList();
 
 
-    cout << "\nItem at index 1 : " << myDynamicArray.getItem(1);
-    
 
-    myDynamicArray.reverse();
-
-    cout << "\nArray items after reversing: ";
+    myDynamicArray.deleteItemAt(3);
+    cout << "\nArray after deleting item at index 3 : ";
     myDynamicArray.printList();
-
-    myDynamicArray.clear();
-
-    cout << "\nArray after clearing it : ";
-    myDynamicArray.printList();
-
 
     system("pause>0");
 

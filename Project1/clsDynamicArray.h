@@ -84,5 +84,28 @@ public:
 		_ptr = new T[0];
 		_size = 0;
 	}
+
+	void deleteItemAt(int index) {
+		if (index >= _size || index < 0) {
+			return;
+		}
+
+
+		T* _newPtr = new T[_size - 1];
+		for (int i = 0, j = 0;  i < _size; i++) {
+			if (i != index) {
+				_newPtr[j] = _ptr[i];
+				j++;
+			}
+			else {
+				continue;
+			}
+				
+			
+		}
+		delete[] _ptr;
+		_ptr = _newPtr;
+		_size--;
+	}
 };
 
