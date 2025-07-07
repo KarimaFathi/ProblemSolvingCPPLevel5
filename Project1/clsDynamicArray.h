@@ -116,6 +116,41 @@ public:
 		deleteItemAt(_size - 1);
 	}
 
+	int find(T item) {
+		for (int i = 0; i < _size; i++) {
+			if (_ptr[i] == item) {
+				return i;
+			}
+		}
+		return -1;
+	}
+
+	bool deleteItem(T item) {
+		int index = find(item);
+		if (index == -1) {
+			return false;
+		}
+		
+		deleteItemAt(index);
+		return false;
+	}
+
+	void insertAt(int index, T item) {
+		if (index < 0 || index > _size) {
+			return;
+		}
+		T* _newPtr = new T[_size + 1];
+	    for(int i = 0; i< index; i++) {
+			_newPtr[i] = _ptr[i];
+		}
+		_newPtr[index] = item;
+		for (int i = index; i < _size; i++) {
+			_newPtr[i + 1] = _ptr[i];
+		}
+		delete[] _ptr;
+		_ptr = _newPtr;
+		_size++;
+	}
 
 };
 
