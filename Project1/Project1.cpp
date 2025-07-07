@@ -22,20 +22,18 @@ int main()
     cout << "\nArray items : ";
     myDynamicArray.printList();
 
-    int index = myDynamicArray.find(30);
+    cout << endl << endl;
+    myDynamicArray.insertAtBeginning(200);
+    myDynamicArray.printList(); cout << endl;
 
-    if (index == -1) {
-        cout << "\nItem was not found.\n";
-    }
-    else {
-        cout << "\nItem is found at index : " << index;
-    }
+    myDynamicArray.insertBefore(2, 400);
+    myDynamicArray.printList(); cout << endl;
 
-    myDynamicArray.insertAt(5, 500);
-    cout << "\nArray items after inserting item 500 at index 5 : ";
-    myDynamicArray.printList();
+    myDynamicArray.insertAfter(1, 300);
+    myDynamicArray.printList(); cout << endl;
 
-    cout << "\nArray size : " << myDynamicArray.size();
+    myDynamicArray.insertAtEnd(500);
+    myDynamicArray.printList(); cout << endl;
     system("pause>0");
 
 }

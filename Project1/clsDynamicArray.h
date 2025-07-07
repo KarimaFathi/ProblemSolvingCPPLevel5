@@ -152,5 +152,22 @@ public:
 		_size++;
 	}
 
+	void insertAtBeginning(T item) {
+		insertAt(0, item);
+	}
+
+	void insertAtEnd(T item) {
+		insertAt(_size, item);
+	}
+
+	void insertBefore(int index, T item) {
+		insertAt(index - 1, item);
+	}
+
+	void insertAfter(int index, T item) {
+		insertAt(index + 1, item);
+	}
+
+
 };
 
