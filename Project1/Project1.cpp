@@ -1,5 +1,5 @@
 #include <iostream>
-#include "clsMyString.h"
+#include "clsQueueLine.h"
 using namespace std;
 
 
@@ -7,49 +7,18 @@ using namespace std;
 
 int main()
 {
-    cout << "\n\n\t\t\t\t\t\t Undo/Redo Project\n\n";
+   
+    clsQueueLine payBillsQueue("A0", 10);
 
-    clsMyString S1;
+    payBillsQueue.issueTicket();
+    payBillsQueue.issueTicket();
+    payBillsQueue.issueTicket();
+    payBillsQueue.issueTicket();
+    payBillsQueue.issueTicket();
 
-    cout << "\nS1  = " << S1.Value << "\n";
+    payBillsQueue.printInfo();
 
-    S1.Value = "Mohammed";
-
-    cout << "S1  = " << S1.Value << "\n";
-
-    S1.Value = "Mohammed2";
-
-    cout << "S1  = " << S1.Value << "\n";
-
-    S1.Value = "Mohammed3";
-
-    cout << "S1  = " << S1.Value << "\n";
-
-    cout << "\n\nUndo: ";
-    cout << "\n__________\n";
-
-    S1.undo();
-    cout << "\nS1  after undo = " << S1.Value << "\n";
-
-    S1.undo();
-    cout << "S1  after undo = " << S1.Value << "\n";
-
-    S1.undo();
-    cout << "S1  after undo = " << S1.Value << "\n";
-
-
-    cout << "\n\nRedo: ";
-    cout << "\n__________\n";
-
-    S1.redo();
-    cout << "\nS1  after Redo = " << S1.Value << "\n";
-
-    S1.redo();
-    cout << "S1  after Redo = " << S1.Value << "\n";
-
-    S1.redo();
-    cout << "S1  after Redo = " << S1.Value << "\n";
-
+    payBillsQueue.printAllTickets();
     system("pause>0");
 
     return 0;
