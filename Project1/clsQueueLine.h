@@ -18,6 +18,10 @@ private:
 		string date;
 		int waitingClients = 0;
 		int serveTimeIn = 0;
+
+		stTicket(string Prefix, string Date, int Waiting, int ServeIn)
+			: prefix(Prefix), date(Date), waitingClients(Waiting), serveTimeIn(ServeIn) {}
+
 		void print() {
 			   cout << "\t\t\t\t_____________________________________\n\n";
 				cout << "\t\t\t\t\t\t " << prefix << "\n\n";
@@ -60,34 +64,35 @@ public:
 	__declspec(property(get = getTimePerService, put = setTimePerService)) int timePerService;
 
 
-	queue <stTicket> qIssuedTickets;
+	queue <stTicket> queueLine;
 
 	void issueTicket() {
-		stTicket ticket;
 
-		ticket.prefix = getCode() + to_string(qIssuedTickets.size() + 1);
-		ticket.date = clsDate::getCurrentDateTimeString();
-		ticket.waitingClients = qIssuedTickets.size();
-		ticket.serveTimeIn = _timePerService * qIssuedTickets.size();
+		stTicket ticket(
+			getCode() + to_string(queueLine.size() + 1),
+			clsDate::getCurrentDateTimeString(),
+			queueLine.size(),
+			_timePerService * queueLine.size()
+		);
 
-		qIssuedTickets.push(ticket);
+		queueLine.push(ticket);
 		_totalTickets++;
 	}
 
 	bool serveNextClient()
 	{
-		if (qIssuedTickets.empty())
+		if (queueLine.empty())
 			return false;
 
 
-		qIssuedTickets.pop();
+		queueLine.pop();
 
 		return true;
 
 	}
 
 	int servedTickets() {
-		return _totalTickets - qIssuedTickets.size();
+		return _totalTickets - queueLine.size();
 	}
 
 	void printInfo() {
@@ -95,41 +100,17 @@ public:
 		cout << "\t\t\t\t\t  Queue Info\n";
 		cout << "\t\t\t\t_____________________________________\n\n";
 		cout << "\t\t\t\t    Queue prefix      : " << code << endl;
-		cout << "\t\t\t\t    Total tickets     : " << qIssuedTickets.size() << endl;
+		cout << "\t\t\t\t    Total tickets     : " << queueLine.size() << endl;
 		cout << "\t\t\t\t    Served clients    : " << servedTickets() << endl;
-		cout << "\t\t\t\t    Waiting clients   : " << qIssuedTickets.size() << endl;
+		cout << "\t\t\t\t    Waiting clients   : " << queueLine.size() << endl;
 		cout << "\n\t\t\t\t_____________________________________\n";
 
 	}
 
 
 
-	void printTicketsLineRTL() {
-		int counter = 0;
-		if (qIssuedTickets.empty()) {
-			cout << "\n\t\t No Tickets\n";
-		}
-		cout << "\n\t\tTickets : ";
-		while (counter < qIssuedTickets.size()) {
-			cout << code << to_string((counter + 1)) << "  <--  ";
-			counter++;
-		}
-	}
-
-	void printTicketsLineLTR() {
-		int counter = qIssuedTickets.size();
-		if (qIssuedTickets.empty()) {
-			cout << "\n\t\t No Tickets\n";
-		}
-		cout << "\n\t\tTickets : ";
-		while (counter > 0) {
-			cout << code << to_string((counter)) << "  -->  ";
-			counter--;
-		}
-	}
-
 	void printAllTickets() {
-		queue <stTicket> qTempTickets = qIssuedTickets;
+		queue <stTicket> qTempTickets = queueLine;
 
 		if (qTempTickets.empty()) {
 			cout << "\n\n\t\t\t     ---No Tickets---\n";
